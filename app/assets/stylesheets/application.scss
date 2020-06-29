@@ -14,3 +14,31 @@
  *= require_self
  */
 @import "bootstrap";
+
+.good {
+    background-color: #00E400;
+}
+
+.moderate {
+    background-color: #FFFF00;
+}
+
+.usg {
+    background-color: #FF7E00;
+}
+
+.unhealthy {
+    background-color: #FF0000;
+}
+
+.very-unhealthy {
+    background-color: #8F3F97;
+}
+
+.hazardous {
+    background-color:#7E0023;
+}
+
+.error {
+    background-color: #808080;
+}

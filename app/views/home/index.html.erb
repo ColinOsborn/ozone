@@ -1,9 +1,11 @@
-<div class="jumbotron text-center">
-    <h1 class="display-4">Ozone reading: <%= @output[0]['AQI'] %></h1>
-    <p class="lead">This is the current ozone air quality read out for my neighborhood in Carbondale, CO</p>
+<div class="jumbotron text-center <%= @quality_color %>">
+    <h1 class="display-4">Ozone reading: <%= @final_output %></h1>
+    <p class="lead">This is the current ozone air quality, or AQI read out for my location: </p>
+    <p>The U.S. Air Quality Index (AQI) is a color-coded scale from 0 to 500 used to communicate air quality</p>
     <hr class="my-4">
+    <p><%= @quality_description %></p>
     <p>Hit reload to update the reading</p>
-    <a class="btn btn-primary btn-lg" href="#" role="button">Learn More</a>
+    <a class="btn btn-primary btn-lg" href="/" role="button">Reload</a>
 </div>
 
 <br>
