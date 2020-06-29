@@ -2,11 +2,9 @@ class HomeController < ApplicationController
     require 'net/http'
     require 'json'
 
-    def index 
-        require 'net/http'
-        require 'json'
-        # @url = 'http://www.airnowapi.org/aq/observation/zipCode/current/?format=application/json&zipCode=81611&distance=2&API_KEY=B13144EB-18EB-4067-8485-1473BF537575'
-        @url = "http://www.airnowapi.org/aq/observation/zipCode/current/?format=application/json&zipCode=81623&distance=100&API_KEY=B13144EB-18EB-4067-8485-1473BF537575"
+    def index
+        api_key = Rails.application.credentials.API_KEY
+        @url = "http://www.airnowapi.org/aq/observation/zipCode/current/?format=application/json&zipCode=81623&distance=100&API_KEY=#{api_key}"
         @uri = URI(@url)
         @response = Net::HTTP.get(@uri)
         @output = JSON.parse(@response)
@@ -51,9 +49,8 @@ class HomeController < ApplicationController
             #do api search
         end
 
-        # require 'net/http'
-        # require 'json'
-        @url = "http://www.airnowapi.org/aq/observation/zipCode/current/?format=application/json&zipCode=#{@zip_query}&distance=100&API_KEY=B13144EB-18EB-4067-8485-1473BF537575"
+        api_key = Rails.application.credentials.API_KEY
+        @url = "http://www.airnowapi.org/aq/observation/zipCode/current/?format=application/json&zipCode=#{@zip_query}&distance=100&API_KEY=#{api_key}"
         @uri = URI(@url)
         @response = Net::HTTP.get(@uri)
         @output = JSON.parse(@response)
