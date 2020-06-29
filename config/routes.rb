@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
-
+  # get 'home/zipcode'
   root 'home#index'
 
-  # resources :home
+  post "zipcode" => "home#zipcode"
 end
